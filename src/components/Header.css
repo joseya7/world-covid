@@ -1,0 +1,10 @@
+.app__header {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.inputRounded .MuiOutlinedInput-root {
+  border-radius: 50px;
+}

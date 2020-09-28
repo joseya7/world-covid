@@ -1,0 +1,67 @@
+.infoBox {
+  flex: 1;
+  border-radius: 10px !important;
+  cursor: pointer;
+}
+
+.infoBox:not(:last-child) {
+  margin-right: 25px;
+}
+
+.infoBox--selected {
+  border-top: 10px solid greenyellow;
+}
+
+.infoBox--red {
+  border-color: red;
+}
+
+.infoBox--black {
+  border-color: black;
+}
+
+.infoBox__cases--green {
+  color: lightgreen !important;
+}
+.infoBox__cases--black {
+  color: black !important;
+}
+
+.infoBox__cases--red {
+  color: red !important;
+}
+
+.infoBox__cases {
+  color: #eee4e6;
+  margin: 0;
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+.infoBox__total {
+  color: #6c757d;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  margin: 5px 0px !important;
+}
+
+.card__header {
+  display: flex;
+  align-items: center;
+}
+.card__header__right {
+  margin-left: auto;
+}
+
+.card-flag {
+  height: 80px;
+  width: 110px;
+  background-size: cover;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.card-flag img {
+  width: 100%;
+  border-radius: 5px;
+}

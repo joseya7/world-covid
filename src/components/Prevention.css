@@ -1,0 +1,9 @@
+.prevention {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  border-radius: 10px;
+  box-shadow: 0 5px 5px 0 #00000050;
+}

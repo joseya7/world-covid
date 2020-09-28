@@ -1,0 +1,10 @@
+.prevention__card {
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  max-width: 160px;
+}
+
+.prevention img {
+  width: 100px;
+}

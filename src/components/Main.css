@@ -1,0 +1,10 @@
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.stats {
+  margin-top: 20px;
+  padding-top: 0px;
+}
