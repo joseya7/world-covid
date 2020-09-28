@@ -1,68 +1,59 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 주식 포트폴리오 백테스팅 프로젝트
 
-## Available Scripts
+## 개요
 
-In the project directory, you can run:
+1. 저의 **첫** 웹 개발 프로젝트입니다. 최대한 디버깅을 했지만, 아직 부족한 부분이 많은사이트입니다.ㅜㅜ
+2. 사용한 프레임워크 : **React, Redux, Boostrap, Material-UI, Node.js, MongoDB, Express.js**
+3. 배포 : heroku
+4. LIVE : https://enigmatic-sierra-41569.herokuapp.com/
+5. NAVBAR의 상당부분은 아직 구현하지 않았습니다. **BACKTEST**에 집중해주세요~
 
-### `npm start`
+---
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 웹 사이트 구경하기
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### \* 포트폴리오 구성하기
 
-### `npm test`
+![ezgif com-crop](https://user-images.githubusercontent.com/30207544/94329812-3fc47280-fff9-11ea-8d3f-470a4c947200.gif)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. 주식종목을 선택하기 전에, **시작년도**,**끝년도** 그리고 **초기자본**을 선택해주세요.
+2. DB에는 약 2200개의 종목과 월별가격이 저장되어 있습니다. BACKTEST하기 위해 **주식종목을 선택**해주세요.
+3. 포트폴리오에는 **자본을 몇%로 할당할 것인지 정해주세요.** (1개의 포트폴리오는 꼭 100%가 되어야 합니다.)
 
-### `npm run build`
+### \* 포트폴리오 결과 확인하기
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![ezgif com-crop (1)](https://user-images.githubusercontent.com/30207544/94329917-240d9c00-fffa-11ea-9a03-ab874690bdee.gif)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1. 첫째로 포트폴리오를 얼마나 **할당**했는지 알 수 있습니다.
+2. 두번째로는 통계치를 요약했습니다.
+   (**최종수익, 평균연간 수익률, 표준편차, 최고수익률, 최저수익률**)
+3. 세번째로는 **연간 수익률**을 알 수 있습니다.
+4. 네번째로는 **월간누적수익**을 알 수 있습니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 삽질하면서 깨달은 점
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### **1. 기본적인 설계(계획)는 필요하다**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 프로젝트를 시작하기 전에 Backend에서 받은 데이터를 어떻게 전처리할지 설계를 한 후에, 차트 통계 Component를 만들었어야 했다.
+- 주먹구구식으로 문제가 생기면 수정하는 식으로 만드니 나중에는 통합된 데이터를 받기는 커녕, 수많은 타입들이 엉켜서 오히려 디버깅 하는데 시간을 더 쓰게 되었다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### **2. 가독성 있는 코드를 쓰려고 노력해야한다.**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- 어이가 없지만, 내가 일주일 전에 쓴 코드를 읽고 이해할 수가 없었다.
+- 가독성이 떨어지니까, 디버깅 및 유지보수하기가 너무나도 힘들었다.
+- 그래서 지금 클린코드, 자바스크립트 코딩의 기술을 읽고 있다. 부디 다음 프로젝트에는 좋은 코드를 쓸 수 있기를 기원하며...
 
-## Learn More
+### **3. for문을 너무 남발했다.**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- 지금 보면 너무나도 부끄러운 코드지만 다음과 같은 코드를 남발했다.
+  ```
+  const myList = []
+  for (let i=0; i<data.length;i++){
+      do something with data[i];
+      myList.push(data[i])
+  }
+  ```
+- 다음 프로젝트부터는 map, filter, reduce 배열 메서드를 주로 사용하려고 노력해야겠다.
+- 원본배열을 조작하는 메서드들 push, pop, shift, unshift, splice의 사용은 지양해야겠다.
